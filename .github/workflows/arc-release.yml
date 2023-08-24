@@ -1,4 +1,4 @@
-name: Cfnrelease
+name: ARCCfnrelease
 
 on:
   workflow_dispatch:
