@@ -25,6 +25,7 @@ jobs:
             *.docker.com:443
             *.docker.io:443
             *.golang.org:443
+            *.cloudflare.docker.com:443
             public.ecr.aws:443
             storage.googleapis.com:443
           
