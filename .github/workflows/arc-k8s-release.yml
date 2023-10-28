@@ -16,7 +16,7 @@ jobs:
     container: ubuntu
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@rc-v2.6.1
+        uses: step-security/harden-runner@rc
         with:
           disable-sudo: true
           egress-policy: block
