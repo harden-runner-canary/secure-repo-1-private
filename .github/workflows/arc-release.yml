@@ -41,4 +41,4 @@ jobs:
       - name: test outbound
         continue-on-error: true
         run: |
-          docker run alpine:3.15 wget https://docker.io
+          curl https://docker.io
