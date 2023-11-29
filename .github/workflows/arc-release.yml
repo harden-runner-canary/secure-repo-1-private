@@ -41,5 +41,4 @@ jobs:
       - name: test outbound
         continue-on-error: true
         run: |
-          curl https://13.107.21.200 -insecure --connect-timeout 5 || true
           docker run alpine:3.15 wget http://52.200.117.68
