@@ -38,7 +38,3 @@ jobs:
         run: |
           docker build .
           
-      - name: test outbound
-        continue-on-error: true
-        run: |
-          curl https://docker.io
