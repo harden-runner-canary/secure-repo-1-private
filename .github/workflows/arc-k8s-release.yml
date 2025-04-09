@@ -2,6 +2,11 @@ name: ARCK8SCfnrelease
 
 on:
   workflow_dispatch:
+    inputs:
+      RunnerLabel:
+        description: "Target ARC name used for runs-on in job"
+        required: true
+        default: "arc0"
   
 
 permissions: # added using https://github.com/step-security/secure-repo
@@ -12,7 +17,7 @@ jobs:
     permissions:
       contents: read
       
-    runs-on: arc0
+    runs-on: ${{ inputs.RunnerLabel }}
     container: ubuntu
     steps:
       - name: Harden Runner
