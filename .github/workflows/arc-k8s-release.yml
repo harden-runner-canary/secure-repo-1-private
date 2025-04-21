@@ -1,4 +1,5 @@
 name: ARCK8SCfnrelease
+run-name:  ARCK8SCfnrelease-${{ inputs.WorkflowFileID }}
 
 on:
   workflow_dispatch:
@@ -7,6 +8,10 @@ on:
         description: "Target ARC name used for runs-on in job"
         required: true
         default: "arc0"
+      WorkflowFileID:
+        description: "WorkflowID"
+        required: false
+        default: ""
   
 
 permissions: # added using https://github.com/step-security/secure-repo
