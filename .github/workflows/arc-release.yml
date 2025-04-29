@@ -1,7 +1,18 @@
 name: ARCCfnrelease
+run-name: ARCCfnrelease-${{ inputs.WorkflowFileID }}
+
 
 on:
   workflow_dispatch:
+    inputs:
+      RunnerLabel:
+        description: "Target ARC name used for runs-on in job"
+        required: true
+        default: "self-hosted"
+      WorkflowFileID:
+        description: "WorkflowID"
+        required: false
+        default: ""
   
 
 permissions: # added using https://github.com/step-security/secure-repo
@@ -12,7 +23,7 @@ jobs:
     permissions:
       contents: read
       
-    runs-on: self-hosted
+    runs-on: ${{ inputs.RunnerLabel }}
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@v2
