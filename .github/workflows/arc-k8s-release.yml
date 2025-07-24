@@ -41,6 +41,11 @@ jobs:
           #   *.cloudflare.docker.com:443
           #   public.ecr.aws:443
           #   storage.googleapis.com:443
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y curl git
           
       - name: Checkout
         uses: actions/checkout@v4
