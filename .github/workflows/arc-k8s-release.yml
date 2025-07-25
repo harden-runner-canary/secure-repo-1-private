@@ -40,6 +40,11 @@ jobs:
             production.cloudflare.docker.com:443
             registry-1.docker.io:443
             security.ubuntu.com:80
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y curl git
           
       - name: Checkout
         uses: actions/checkout@v4
