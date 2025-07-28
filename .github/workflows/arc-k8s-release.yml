@@ -34,6 +34,7 @@ jobs:
             api.github.com.local:443
             api.github.com:443
             archive.ubuntu.com:80
+            archive.ubuntu.com.local:443
             auth.docker.io:443
             codeload.github.com.local:443
             github.com:443
