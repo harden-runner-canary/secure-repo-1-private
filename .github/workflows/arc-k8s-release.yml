@@ -58,3 +58,10 @@ jobs:
       #   continue-on-error: true
       #   run: |
       #     docker run alpine:3.15 wget http://52.200.117.68
+
+      - name: Upload tcpdump
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tcpdump-${{ runner.name }}
+          path: /home/runner/dump-${{ runner.name }}.pcap
