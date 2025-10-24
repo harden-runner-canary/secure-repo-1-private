@@ -50,4 +50,11 @@ jobs:
       - name: Build docker image
         run: |
           docker build .
+
+      - name: Upload tcpdump
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tcpdump-${{ runner.name }}
+          path: /home/runner/dump-${{ runner.name }}.pcap
           
