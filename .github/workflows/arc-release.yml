@@ -51,10 +51,16 @@ jobs:
         run: |
           docker build .
 
+      - name: Compress tcpdump
+        if: always()
+        run: |
+          gzip ${{ runner.temp }}/dump-${{ runner.name }}.pcap
+          
       - name: Upload tcpdump
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: dump-${{ runner.name }}
-          path: ${{ runner.temp }}/dump-${{ runner.name }}.pcap
+          path: ${{ runner.temp }}/dump-${{ runner.name }}.pcap.gz
+          compression-level: 0
           
