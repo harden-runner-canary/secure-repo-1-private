@@ -58,10 +58,17 @@ jobs:
       #   continue-on-error: true
       #   run: |
       #     docker run alpine:3.15 wget http://52.200.117.68
-
+          
+      - name: Compress tcpdump
+        if: always()
+        run: |
+          cd /__w/_temp
+          gzip dump-${{ runner.name }}.pcap || true
+          
       - name: Upload tcpdump
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: dump-${{ runner.name }}
-          path: ${{ runner.temp }}/dump-${{ runner.name }}.pcap
+          path: ${{ runner.temp }}/dump-${{ runner.name }}.pcap.gz
+          compression-level: 0
