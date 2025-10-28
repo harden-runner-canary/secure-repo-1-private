@@ -59,11 +59,10 @@ jobs:
           
       - name: Upload tcpdump
         if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: dump-${{ runner.name }}
           path: ${{ runner.temp }}/dump-${{ runner.name }}.pcap.gz
           compression-level: 0
-          retention-days: 1
-          if-no-files-found: ignore
-          
+          retention-days: 1          
